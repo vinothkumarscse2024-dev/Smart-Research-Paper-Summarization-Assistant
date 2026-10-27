@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-research-paper-summarization-assistant"
+version = "1.0.0"
+description = "A Streamlit research paper library with evidence-grounded summaries and QA"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "streamlit>=1.36,<2",
+  "PyMuPDF>=1.24,<2",
+  "nltk>=3.8,<4",
+  "python-dotenv>=1.0,<2",
+  "openai>=1.40,<3",
+  "sentence-transformers>=3.0,<6",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
